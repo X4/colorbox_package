@@ -4,7 +4,7 @@
 		<field name="bID" type="I">
 			<key />
 			<unsigned />
-		</field> 		
-		<field name="your_name" type="X2" ></field> 		
+		</field>
+		<field name="your_name" type="X2" ></field>
 	</table>
 </schema>
