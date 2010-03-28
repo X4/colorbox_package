@@ -1,20 +1,100 @@
-<?php
-	defined('C5_EXECUTE') or die(_("Access Denied."));
+<?
+	Loader::block('library_file');
+	defined('C5_EXECUTE') or die(_("Access Denied."));	
+	class ColorBoxImageBlockController extends BlockController {
 
-	class ColorBoxBlockController extends BlockController {
+		protected $btInterfaceWidth = 300;
+		protected $btInterfaceHeight = 440;
+		protected $btTable = 'btColorBoxContentImage';
 
-		protected $btName = "ColorBox";
-		protected $btDescription = "A versatile lightbox addon for Concrete5.";
-		protected $btInterfaceWidth = 500;
-		protected $btInterfaceHeight = 350;
-		protected $btTable = 'btColorBox';
-
+		/** 
+		 * Used for localization. If we want to localize the name/description we have to include this
+		 */
 		public function getBlockTypeDescription() {
-			return t("A versatile lightbox addon for Concrete5.");
+			return t("Adds images and onstates from the library to pages with the Colorbox effect.");
+		}
+		
+		public function getBlockTypeName() {
+			return t("Colorbox Image");
+		}		
+		
+		public function getJavaScriptStrings() {
+			return array(
+				'image-required' => t('You must select an image.')
+			);
+		}
+	
+	
+		function getFileID() {return $this->fID;}
+
+		function getFileObject() {
+			return File::getByID($this->fID);
+		}		
+		function getAltText() {return $this->altText;}
+		
+		public function save($args) {		
+			$args['fID'] = ($args['fID'] != '') ? $args['fID'] : 0;
+			$args['maxWidth'] = (intval($args['maxWidth']) > 0) ? intval($args['maxWidth']) : 0;
+			$args['maxHeight'] = (intval($args['maxHeight']) > 0) ? intval($args['maxHeight']) : 0;
+			parent::save($args);
+		}
+		
+		public function on_page_view() {
+			$html = Loader::helper('html');
+			//$this->addHeaderItem($html->javascript('jquery.colorbox-min.js'));
+			$this->addHeaderItem($html->css('colorbox.css'));
 		}
 
-		public function getBlockTypeName() {
-			return t("ColorBox");
+		function getContentAndGenerate($align = false, $style = false, $id = null) {
+			$db = Loader::db();
+			$c = Page::getCurrentPage();
+			$bID = $this->bID;
+			
+			$f = $this->getFileObject();
+			$fullPath = $f->getPath();
+			$relPath = $f->getRelativePath();			
+			$size = @getimagesize($fullPath);
+			
+			if ($this->maxWidth > 0 || $this->maxHeight > 0) {
+				$mw = $this->maxWidth > 0 ? $this->maxWidth : $size[0];
+				$mh = $this->maxHeight > 0 ? $this->maxHeight : $size[1];
+				$ih = Loader::helper('image');
+				$thumb = $ih->getThumbnail($f, $mw, $mh);
+				$sizeStr = ' width="' . $thumb->width . '" height="' . $thumb->height . '"';
+				$relPath = $thumb->src;
+			} else {
+				$sizeStr = $size[3];
+			}
+			
+			$img = "<img border=\"0\" class=\"ccm-image-block\" alt=\"{$this->altText}\" src=\"{$relPath}\" {$sizeStr} ";
+			$img .= ($align) ? "align=\"{$align}\" " : '';
+			
+			$img .= ($style) ? "style=\"{$style}\" " : '';
+				
+				if ($this->maxWidth > 0 || $this->maxHeight > 0) {
+					$thumbHover = $ih->getThumbnail($fos, $mw, $mh);				
+					$relPathHover = $thumbHover->src;
+				}
+
+				//$img .= " onmouseover=\"this.src = '{$relPathHover}'\" ";
+				$img .= " onmouseout=\"this.src = '{$relPath}'\" ";
+			
+				$img .= ($id) ? "id=\"{$id}\" " : "";
+				$img .= "/>";
+				$img = "<a href=\"{$relPath}\" rel=\"{$bID}\">" . $img ."</a>";
+?>
+				
+<script type="text/javascript">
+$(document).ready(function(){
+$("a[rel='<?=$bID?>']").colorbox();
+});
+</script>
+			<?	
+			return $img;
+			}
+			
 		}
-	}
+
+	
+
 ?>

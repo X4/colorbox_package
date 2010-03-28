@@ -1,3 +1,4 @@
-<div><?=htmlentities($your_name).t(' says:') ?></div>
-
-<h1 style="text-align:center; margin-top:0px; padding-top:0px;"><?=t('Hello World!')?></h1>
+<?
+defined('C5_EXECUTE') or die(_("Access Denied."));
+echo($controller->getContentAndGenerate());
+?>
