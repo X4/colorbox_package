@@ -20,8 +20,13 @@ if ($controller->getFileID() > 0) {
 </div>
 
 <div class="ccm-block-field-group">
-<h2><?=t('Alt Text/Caption')?></h2>
+<h2><?=t('Alt Text')?></h2>
 <?= $form->text('altText', $altText, array('style' => 'width: 250px')); ?>
+</div>
+
+<div class="ccm-block-field-group">
+<h2><?=t('Title/Caption')?></h2>
+<?= $form->text('title', $title, array('style' => 'width: 250px')); ?>
 </div>
 
 <div class="ccm-block-field-group">
@@ -35,12 +40,5 @@ if ($controller->getFileID() > 0) {
 <td><?= $form->text('maxHeight', intval($maxHeight), array('style' => 'width: 60px')); ?></td>
 </tr>
 </table>
-
-<div class="ccm-block-field-group">
-<h2><?=t('Colorbox Design')?></h2>
-<p><?=t('Enter a number between 1-5')?></ü>
-<?= $form->text('cboxDesign', $cboxDesign, array('style' => 'width: 250px')); ?>
-</div>
-
 
 </div>

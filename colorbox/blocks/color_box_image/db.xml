@@ -19,7 +19,7 @@
 		</field>
 		<field name="altText" type="C" size="255">
 		</field>
-		<field name="cboxDesign" type="C" size="1">
+		<field name="title" type="C" size="255">
 		</field>
 	</table>
 </schema>
