@@ -28,4 +28,10 @@ $al = Loader::helper('concrete/asset_library');
 </tr>
 </table>
 
+<div class="ccm-block-field-group">
+<h2><?=t('Colorbox Design')?></h2>
+<p><?=t('Enter a number between 1-5')?></ü>
+<?= $form->text('cboxDesign', $cboxDesign, array('style' => 'width: 250px')); ?>
+</div>
+
 </div>
