@@ -55,7 +55,7 @@
 
        $url = Loader::helper('concrete/urls');
 
-       $v->addHeaderItem('<link rel="stylesheet" type="text/css" href="' . $url->getBlockTypeAssetsURL($bt) . 'css/design'.$this->cboxDesign.'/colorbox.css" />','CONTROLLER');
+       $v->addHeaderItem('<link rel="stylesheet" type="text/css" href="' . $url->getBlockTypeAssetsURL($bt) . '/css/design'.$this->cboxDesign.'/colorbox.css" />','CONTROLLER');
 }
 
 		function getContentAndGenerate($align = false, $style = false, $id = null) {
