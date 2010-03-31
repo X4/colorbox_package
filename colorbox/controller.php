@@ -2,9 +2,9 @@
 
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
-class ColorboxPackage extends Package {
+class ColorBoxPackage extends Package {
 
-	protected $pkgHandle = 'colorbox';
+	protected $pkgHandle = 'color_box';
 	protected $appVersionRequired = '5.3.0'; 
 	protected $pkgVersion = '1.0';
 	

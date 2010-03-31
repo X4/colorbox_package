@@ -39,13 +39,15 @@
 			$args['maxHeight'] = (intval($args['maxHeight']) > 0) ? intval($args['maxHeight']) : 0;
 			parent::save($args);
 		}
-		/*
+    
 		public function on_page_view() {
+      if($this->cboxDesign == ""){
+          $this->cboxDesign = "1";
+      }
 			$html = Loader::helper('html');
-			$this->addHeaderItem($html->javascript('jquery.colorbox-min.js'));
-			$this->addHeaderItem($html->css('colorbox.css'));
+			$this->addHeaderItem($html->css('css/design'.$this->cboxDesign.'/colorbox.css','colorbox'));
 		}
-		*/
+
 		function getContentAndGenerate($align = false, $style = false, $id = null) {
 			$db = Loader::db();
 			$c = Page::getCurrentPage();
