@@ -35,12 +35,12 @@ $al = Loader::helper('concrete/asset_library');
 
 <div class="ccm-block-field-group">
 <h2><?=t('Choose your ColorBox design')?></h2>
-<select name="orderBy">
-	<option value="1" <? if ($info['orderBy'] == '1') { ?> selected<? } ?>><?=t('decent shadows')?></option>
-	<option value="2" <? if ($info['orderBy'] == '2') { ?> selected<? } ?>><?=t('bright light')?></option>
-  <option value="3" <? if ($info['orderBy'] == '3') { ?> selected<? } ?>><?=t('dark night')?></option>
-  <option value="4" <? if ($info['orderBy'] == '4') { ?> selected<? } ?>><?=t('white glow')?></option>
-  <option value="5" <? if ($info['orderBy'] == '5') { ?> selected<? } ?>><?=t('grey outline')?></option>
+<select name="cboxDesign">
+	<option value="1" <? if ($info['cboxDesign'] == '1') { ?> selected<? } ?>><?=t('decent shadows')?></option>
+	<option value="2" <? if ($info['cboxDesign'] == '2') { ?> selected<? } ?>><?=t('bright light')?></option>
+  <option value="3" <? if ($info['cboxDesign'] == '3') { ?> selected<? } ?>><?=t('dark night')?></option>
+  <option value="4" <? if ($info['cboxDesign'] == '4') { ?> selected<? } ?>><?=t('white glow')?></option>
+  <option value="5" <? if ($info['cboxDesign'] == '5') { ?> selected<? } ?>><?=t('grey outline')?></option>
 </select>
 </div>
 
