@@ -106,6 +106,7 @@ class ColorBoxImageBlockController extends BlockController {
 
 	public function save($data) {
 		$args['fID'] = ($args['fID'] != "") ? $args['fID'] : "0";
+		$args['fID'] = if(isset($data['fID']) $args['fID'] else "0";
 		$args['imgWidth'] = (intval($args['imgWidth']) > "0") ? intval($args['imgWidth']) : "100";
 		$args['imgHeight'] = (intval($args['imgHeight']) > "0") ? intval($args['imgHeight']) : "100";
 
