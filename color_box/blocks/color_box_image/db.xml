@@ -9,17 +9,77 @@
 			<unsigned />
 			<default value="0" />
 		</field>
-		<field name="maxWidth" type="I">
+		<field name="cboxDesign" type="I" size="1" />
+		<field name="imgWidth" type="I">
 			<unsigned />
 			<default value="0" />
 		</field>
-		<field name="maxHeight" type="I">
+		<field name="imgHeight" type="I">
 			<unsigned />
 			<default value="0" />
 		</field>
-		<field name="altText" type="C" size="255">
+		<field name="altText" type="C" size="255" />
+		<field name="title" type="C" size="255" />
+
+		<field name="transition" type="C" size="255" />
+		<field name="speed" type="I" size="10" />
+		<field name="href" type="C" size="512" />
+		<field name="title" type="C" size="255" />
+		<field name="rel" type="C" size="255" />
+		<field name="boxWidth" type="I">
+			<unsigned />
+			<default value="0" />
 		</field>
-		<field name="title" type="C" size="255">
+		<field name="boxHeight" type="I">
+			<unsigned />
+			<default value="0" />
 		</field>
+		<field name="boxInnerWidth" type="I">
+			<unsigned />
+			<default value="0" />
+		</field>
+		<field name="boxInnerHeight" type="I">
+			<unsigned />
+			<default value="0" />
+		</field>
+		<field name="boxInitialWidth" type="I">
+			<unsigned />
+			<default value="0" />
+		</field>
+		<field name="boxInitialHeight" type="I">
+			<unsigned />
+			<default value="0" />
+		</field>
+		<field name="boxMaxWidth" type="I">
+			<unsigned />
+			<default value="0" />
+		</field>
+		<field name="boxMaxHeight" type="I">
+			<unsigned />
+			<default value="0" />
+		</field>
+		<field name="scalePhotos" type="C" size="1" />
+		<field name="scrolling" type="C" size="1" />
+		<field name="iframe" type="C" size="255" />
+		<field name="inline" type="C" size="1" />
+		<field name="html" type="C" size="1024" />
+		<field name="photo" type="C" size="1" />
+		<field name="opacity" type="N" size="3" />
+		<field name="open" type="C" size="1" />
+		<field name="preloading" type="C" size="1" />
+		<field name="overlayClose" type="C" size="1" />
+		<field name="slideshow" type="C" size="1" />
+		<field name="slideshowSpeed" type="C" size="10" />
+		<field name="slideshowAuto" type="C" size="1" />
+		<field name="slideshowStart" type="C" size="255" />
+		<field name="current" type="C" size="255" />
+		<field name="previous" type="C" size="255" />
+		<field name="next" type="C" size="255" />
+		<field name="close" type="C" size="255" />
+		<field name="onOpen" type="C" size="1024" />
+		<field name="onLoad" type="C" size="1024" />
+		<field name="onComplete" type="C" size="1024" />
+		<field name="onCleanup" type="C" size="1024" />
+		<field name="onClosed" type="C" size="1024" />
 	</table>
 </schema>

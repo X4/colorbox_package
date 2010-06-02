@@ -9,7 +9,7 @@ class ColorBoxPackage extends Package {
 	protected $pkgVersion = '1.0';
 	
 	public function getPackageDescription() {
-		return t("Lets add content into a colorbox.");
+		return t("Lets you add content into a colorbox.");
 	}
 	
 	public function getPackageName() {
@@ -24,7 +24,9 @@ class ColorBoxPackage extends Package {
 		
 	}
 
-
+	public function uninstall() {
+		$pkg = parent::uninstall();
+	}
 
 
 }
