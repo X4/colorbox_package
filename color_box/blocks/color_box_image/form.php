@@ -33,13 +33,13 @@ if ($controller->getFileID() > 0) {
 
 	<div class="ccm-block-field-group">
 		<h2><?php echo t('Colorbox inline');?></h2>
-		<p><?php echo t('If "true" a jQuery selector can be used to display content from the current page. Example: $("#inline").colorbox({inline:true, href:"#myForm"});')?></p>
+		<p><?php echo t('If "true" a jQuery selector can be used to display content from the current page.')?></p>
 		<?php echo $form->checkbox('cboxInline', intval($cboxInline), array('style' => 'width: 60px')); ?>
 	</div>
 
 	<div class="ccm-block-field-group">
 		<h2><?php echo t('Colorbox html');?></h2>
-		<p><?php echo t('This allows an HTML string to be used directly instead of pulling content from another source (ajax, inline, or iframe). Example: $.fn.colorbox({html:"<p>Hello</p>"})')?></p>
+		<p><?php echo t('This allows an HTML string to be used directly instead of pulling content from another source (ajax, inline, or iframe).')?></p>
 		<h1>TODO: We need a c5 popup that opens a c5 editor in here.</h1>
 	</div>
 
@@ -89,13 +89,13 @@ if ($controller->getFileID() > 0) {
 
 	<div class="ccm-block-field-group">
 		<h2><?php echo t('Colorbox innerWidth');?></h2>
-		<p><?php echo t('This is an alternative to 'width' used to set a fixed inner width. This excludes borders and buttons. Example: "50%", "500px", or 500')?></p>
+		<p><?php echo t('This is an alternative to "width" used to set a fixed inner width. This excludes borders and buttons. Example: "50%", "500px", or 500')?></p>
 		<?php echo $form->text('cboxInnerWidth', intval($cboxInnerWidth), array('style' => 'width: 60px')); ?>
 	</div>
 
 	<div class="ccm-block-field-group">
 		<h2><?php echo t('Colorbox innerHeight');?></h2>
-		<p><?php echo t('This is an alternative to 'height' used to set a fixed inner height. This excludes borders and buttons. Example: "50%", "500px", or 500')?></p>
+		<p><?php echo t('This is an alternative to "height" used to set a fixed inner height. This excludes borders and buttons. Example: "50%", "500px", or 500')?></p>
 		<?php echo $form->text('cboxInnerHeight', intval($cboxInnerHeight), array('style' => 'width: 60px')); ?>
 	</div>
 
