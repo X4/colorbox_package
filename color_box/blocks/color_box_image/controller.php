@@ -7,9 +7,6 @@
 		protected $btInterfaceHeight = 440;
 		protected $btTable = 'btColorBoxContentImage';
 
-		/**
-		 * Used for localization. If we want to localize the name/description we have to include this
-		 */
 		public function getBlockTypeDescription() {
 			return t("Adds images from the library to pages with the Color Box effect.");
 		}
