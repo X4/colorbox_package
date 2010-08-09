@@ -28,7 +28,7 @@ class ColorBoxImageBlockController extends BlockController {
 			'next' => t('next'),
 			'close' => t('close'),
 			'start slideshow' => t('start slideshow'),
-			'stop slideshow' => t('stop slideshow'),
+			'stop slideshow' => t('stop slideshow')
 		);
 	}
 
