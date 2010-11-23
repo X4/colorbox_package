@@ -3,7 +3,7 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 Loader::block('library_file');
 class ColorBoxImageBlockController extends BlockController {
 
-	protected $btInterfaceWidth = 550;
+	protected $btInterfaceWidth = 555;
 	protected $btInterfaceHeight = 440;
 	protected $btTable = 'btColorBoxContentImage';
 
